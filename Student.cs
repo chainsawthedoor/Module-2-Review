@@ -1,4 +1,6 @@
-﻿namespace Module_2_Review;
+﻿using System.Security.Cryptography;
+
+namespace Module_2_Review;
 
 public class Student
 {
@@ -10,7 +12,26 @@ public class Student
     {
         Grades.AddRange(grade);
     }
-    
-    
+
+    public void CalculateAverageGrade()
+    {
+        double avgGrade = Grades.Average();
+        Console.WriteLine($"Average grade: {avgGrade}");
+        if (Grades.Count == 0)
+        {
+            Console.WriteLine("No grades found");
+        }
+    }
+
+    public Student()
+    {
+        
+    }
+
+    public Student(string name, int id)
+    {
+        Name = name;
+        ID = id;
+    }
     
 }
